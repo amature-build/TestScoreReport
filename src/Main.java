@@ -10,6 +10,11 @@ public class Main {
             String row = generateRow(name, score, grade);
             System.out.println(row);
         }
+
+        System.out.println();
+        displayHighestGrade(sg);
+        System.out.println();
+        displayStudentsHighestGrade(sg);
     }
 
     public static void getHeader(){
@@ -43,5 +48,22 @@ public class Main {
         }
 
         return output.toString();
+    }
+    public static void displayHighestGrade(StudentGradeData studentGradeData){
+        int highGrade = studentGradeData.getHighestGrade();
+        String msg = "Highest Test Score: ";
+        StringBuilder output = new StringBuilder(msg);
+        output.append(highGrade);
+        System.out.println(output);
+    }
+    public static void displayStudentsHighestGrade(StudentGradeData studentGradeData){
+        int highGrade = studentGradeData.getHighestGrade();
+        String msg = "Student(s) having the highest test score:";
+        System.out.println(msg);
+        for (StudentGrade student: studentGradeData.getAllStudentGrades()) {
+            if (student.getScore() == highGrade){
+                System.out.println(student.getFullName());
+            }
+        }
     }
 }

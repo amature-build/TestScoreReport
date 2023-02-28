@@ -42,7 +42,7 @@ public class Main {
                 output.append(" ");
             } else if (i == gradeStart) {
                 output.append(grade);
-            } else if (i > gradeUnto && i < length) {
+            } else if (i > gradeUnto) {
                 output.append(" ");
             }
         }
@@ -52,9 +52,7 @@ public class Main {
     public static void displayHighestGrade(StudentGradeData studentGradeData){
         int highGrade = studentGradeData.getHighestGrade();
         String msg = "Highest Test Score: ";
-        StringBuilder output = new StringBuilder(msg);
-        output.append(highGrade);
-        System.out.println(output);
+        System.out.println(msg + highGrade);
     }
     public static void displayStudentsHighestGrade(StudentGradeData studentGradeData){
         int highGrade = studentGradeData.getHighestGrade();
